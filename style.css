@@ -333,12 +333,110 @@ a {
    EXPERIENCIA / TIMELINE
 ============================ */
 
+.timeline-nav {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+
+  padding-bottom: 12px;
+  margin-bottom: 32px;
+
+  scrollbar-width: thin;
+}
+
+.timeline-nav-item {
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  padding: 10px 16px;
+
+  border: 1px solid transparent;
+  border-radius: 999px;
+
+  white-space: nowrap;
+
+  transition:
+    filter 0.2s ease,
+    transform 0.15s ease;
+}
+
+.timeline-nav-item:hover {
+  transform: translateY(-2px);
+
+  filter: brightness(1.08);
+}
+
+.timeline-nav-date {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.timeline-nav-company {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Escala de verdes: más oscuro = experiencia más reciente/madura,
+   más claro = experiencia más antigua */
+
+.timeline-nav-item:nth-child(1) {
+  background: #14532d;
+}
+
+.timeline-nav-item:nth-child(2) {
+  background: #1f7a3d;
+}
+
+.timeline-nav-item:nth-child(3) {
+  background: #3f9752;
+}
+
+.timeline-nav-item:nth-child(4) {
+  background: #86c993;
+}
+
+.timeline-nav-item:nth-child(5) {
+  background: #d3ecd8;
+}
+
+.timeline-nav-item:nth-child(1) .timeline-nav-date,
+.timeline-nav-item:nth-child(2) .timeline-nav-date,
+.timeline-nav-item:nth-child(3) .timeline-nav-date {
+  color: #d3ecd8;
+}
+
+.timeline-nav-item:nth-child(1) .timeline-nav-company,
+.timeline-nav-item:nth-child(2) .timeline-nav-company,
+.timeline-nav-item:nth-child(3) .timeline-nav-company {
+  color: white;
+}
+
+.timeline-nav-item:nth-child(4) .timeline-nav-date,
+.timeline-nav-item:nth-child(5) .timeline-nav-date {
+  color: #14532d;
+}
+
+.timeline-nav-item:nth-child(4) .timeline-nav-company,
+.timeline-nav-item:nth-child(5) .timeline-nav-company {
+  color: #1f3d26;
+}
+
 .timeline {
   position: relative;
 
   padding-left: 28px;
 
   border-left: 2px solid var(--border);
+
+  scroll-behavior: smooth;
+}
+
+.timeline-item {
+  scroll-margin-top: 24px;
 }
 
 .timeline-item {
